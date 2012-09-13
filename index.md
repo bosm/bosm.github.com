@@ -1,46 +1,46 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: bosm
+tagline: build your linux distribution from scratch made simple
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+## why bosm
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+Building linux distribution from scratch may be hard, but should be simple --- in no more than two steps,
 
-## Update Author Attributes
+    fetch code ---> bosm
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+and, your distribution is ready to be consumed.
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+Reproducing a distribution from source the simple way may be good enough to make distribution user happy. However, what developer needs, out of a build system, is way more than that, to just list a few of them,
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+    - distribution should be customizable (true to user as well)
+    - build fast and build in parallel
+    - incremental build and per-package amend and rebuild
+    - simple and clean way of install/uninstall package
+    - in-place source code change with version control system
+    - built-in cross compile support
 
-    $ rm -rf _posts/core-samples
+bosm (b-awe-some) is designed to achieve all of the above and more.
 
-Here's a sample "posts list".
+## what bosm is and is not
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+bosm is a build system, bosm is not a linux distribution, it builds one (and more) of them. bosm is light weight and simple to use, and bosm has both user and developer support in mind.
 
-## To-Do
+bosm is a build system designed to help build your linux distribution and/or software with the following goals,
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
+    - simple and easy to use
+    - fast and incremental/parallel build
+    - cross compile friendly
+    - in-place source code change --- no build time copy/staging
+    - open source licenses management
+    - git integration
 
+## test run
 
+Sounds interesting? to try it out,
+
+    repo init -u git://github.com/bosm/manifest && repo sync
+    export PATH=$PWD/bos/bin:$PATH
+    bosm
